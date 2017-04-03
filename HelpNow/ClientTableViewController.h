@@ -11,10 +11,10 @@
 @interface ClientTableViewController : UITableViewController
 {
     NSDictionary *jsonData;
-    
+
     //  __block NSArray *Agents;
 }
-@property(nonatomic,retain) NSArray *Agents;
+@property(nonatomic,retain) NSMutableArray *Clients;
 
 @end
 

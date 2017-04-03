@@ -150,7 +150,7 @@ typedef enum {
 
  @param data An NSData object containing the next chunk of JSON
 
- @return 
+ return 
  @li SBJsonStreamParserComplete if a full document was found
  @li SBJsonStreamParserWaitingForData if a partial document was found and more data is required to complete it
  @li SBJsonStreamParserError if an error occured. (See the error property for details in this case.)

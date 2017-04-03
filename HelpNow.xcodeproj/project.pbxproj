@@ -34,6 +34,14 @@
 		BB4D81A31E89A3B900E7D060 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4D81971E89A3B900E7D060 /* SBJsonWriter.m */; };
 		BB97A7DE1E8B6C5400A10CBA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB97A7DD1E8B6C5400A10CBA /* TableViewController.m */; };
 		BB97A7E11E8BE4E300A10CBA /* ClientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB97A7E01E8BE4E300A10CBA /* ClientTableViewController.m */; };
+		BB97A8261E8D2BC800A10CBA /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB97A8251E8D2BC800A10CBA /* LoginTableViewController.m */; };
+		BB97A8281E8DFC7C00A10CBA /* RegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB97A8271E8DFC7C00A10CBA /* RegisterTableViewController.m */; };
+		BBCB71061E902B0C007DA0E6 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB71021E902B0C007DA0E6 /* SVIndefiniteAnimatedView.m */; };
+		BBCB71071E902B0C007DA0E6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BBCB71031E902B0C007DA0E6 /* SVProgressHUD.bundle */; };
+		BBCB71081E902B0C007DA0E6 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB71051E902B0C007DA0E6 /* SVProgressHUD.m */; };
+		BBCB710B1E90C9F5007DA0E6 /* AgentDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB710A1E90C9F5007DA0E6 /* AgentDetailTableViewController.m */; };
+		BBCB710E1E9128D6007DA0E6 /* ClientDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB710D1E9128D6007DA0E6 /* ClientDetailTableViewController.m */; };
+		BBCFD73E1E8FBF2800B85322 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFD73D1E8FBF2800B85322 /* MainTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +113,21 @@
 		BB97A7DD1E8B6C5400A10CBA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		BB97A7DF1E8BE4E300A10CBA /* ClientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientTableViewController.h; sourceTree = "<group>"; };
 		BB97A7E01E8BE4E300A10CBA /* ClientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientTableViewController.m; sourceTree = "<group>"; };
+		BB97A8241E8D2BC800A10CBA /* LoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableViewController.h; sourceTree = "<group>"; };
+		BB97A8251E8D2BC800A10CBA /* LoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableViewController.m; sourceTree = "<group>"; };
+		BB97A8271E8DFC7C00A10CBA /* RegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTableViewController.m; sourceTree = "<group>"; };
+		BB97A8291E8DFC9900A10CBA /* RegisterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTableViewController.h; sourceTree = "<group>"; };
+		BBCB71011E902B0C007DA0E6 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		BBCB71021E902B0C007DA0E6 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		BBCB71031E902B0C007DA0E6 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		BBCB71041E902B0C007DA0E6 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		BBCB71051E902B0C007DA0E6 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		BBCB71091E90C9F5007DA0E6 /* AgentDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgentDetailTableViewController.h; sourceTree = "<group>"; };
+		BBCB710A1E90C9F5007DA0E6 /* AgentDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgentDetailTableViewController.m; sourceTree = "<group>"; };
+		BBCB710C1E9128D6007DA0E6 /* ClientDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientDetailTableViewController.h; sourceTree = "<group>"; };
+		BBCB710D1E9128D6007DA0E6 /* ClientDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientDetailTableViewController.m; sourceTree = "<group>"; };
+		BBCFD73C1E8FBF2800B85322 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		BBCFD73D1E8FBF2800B85322 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				BB1054011E85421600AEA410 /* HelpNow */,
+				BBCB71001E902B0C007DA0E6 /* SVProgressHUD */,
 				BB10541B1E85421700AEA410 /* HelpNowTests */,
 				BB1054261E85421700AEA410 /* HelpNowUITests */,
 				BB1054001E85421600AEA410 /* Products */,
@@ -167,6 +191,16 @@
 				BB1054351E8544A300AEA410 /* users.xcdatamodeld */,
 				BB1054391E8545C400AEA410 /* users.swift */,
 				BB10540B1E85421600AEA410 /* Main.storyboard */,
+				BBCB71091E90C9F5007DA0E6 /* AgentDetailTableViewController.h */,
+				BBCB710A1E90C9F5007DA0E6 /* AgentDetailTableViewController.m */,
+				BBCB710C1E9128D6007DA0E6 /* ClientDetailTableViewController.h */,
+				BBCB710D1E9128D6007DA0E6 /* ClientDetailTableViewController.m */,
+				BBCFD73C1E8FBF2800B85322 /* MainTableViewController.h */,
+				BBCFD73D1E8FBF2800B85322 /* MainTableViewController.m */,
+				BB97A8241E8D2BC800A10CBA /* LoginTableViewController.h */,
+				BB97A8251E8D2BC800A10CBA /* LoginTableViewController.m */,
+				BB97A8291E8DFC9900A10CBA /* RegisterTableViewController.h */,
+				BB97A8271E8DFC7C00A10CBA /* RegisterTableViewController.m */,
 				BB4D81781E899DDC00E7D060 /* helpnowcover.jpg */,
 				BB4D817A1E899DF300E7D060 /* HelpNowlogo1.png */,
 				BB4D817C1E899E0400E7D060 /* helpnowlogo2.png */,
@@ -235,6 +269,19 @@
 				BB4D81971E89A3B900E7D060 /* SBJsonWriter.m */,
 			);
 			name = Json;
+			sourceTree = "<group>";
+		};
+		BBCB71001E902B0C007DA0E6 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BBCB71011E902B0C007DA0E6 /* SVIndefiniteAnimatedView.h */,
+				BBCB71021E902B0C007DA0E6 /* SVIndefiniteAnimatedView.m */,
+				BBCB71031E902B0C007DA0E6 /* SVProgressHUD.bundle */,
+				BBCB71041E902B0C007DA0E6 /* SVProgressHUD.h */,
+				BBCB71051E902B0C007DA0E6 /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			path = HelpNow/SVProgressHUD/SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB1054121E85421600AEA410 /* LaunchScreen.storyboard in Resources */,
+				BBCB71071E902B0C007DA0E6 /* SVProgressHUD.bundle in Resources */,
 				BB4D817B1E899DF300E7D060 /* HelpNowlogo1.png in Resources */,
 				BB10540F1E85421600AEA410 /* Assets.xcassets in Resources */,
 				BB4D817D1E899E0400E7D060 /* helpnowlogo2.png in Resources */,
@@ -377,7 +425,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCFD73E1E8FBF2800B85322 /* MainTableViewController.m in Sources */,
 				BB4D819D1E89A3B900E7D060 /* SBJsonStreamParserState.m in Sources */,
+				BB97A8261E8D2BC800A10CBA /* LoginTableViewController.m in Sources */,
 				BB4D81991E89A3B900E7D060 /* SBJsonParser.m in Sources */,
 				BB4D819C1E89A3B900E7D060 /* SBJsonStreamParserAdapter.m in Sources */,
 				BB1054371E8544A300AEA410 /* users.xcdatamodeld in Sources */,
@@ -388,10 +438,15 @@
 				BB4D81A01E89A3B900E7D060 /* SBJsonStreamWriterState.m in Sources */,
 				BB4D819E1E89A3B900E7D060 /* SBJsonStreamWriter.m in Sources */,
 				BB4D819F1E89A3B900E7D060 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				BBCB710B1E90C9F5007DA0E6 /* AgentDetailTableViewController.m in Sources */,
 				BB1054071E85421600AEA410 /* AppDelegate.m in Sources */,
 				BB4D81A11E89A3B900E7D060 /* SBJsonTokeniser.m in Sources */,
 				BB4D81981E89A3B900E7D060 /* NSObject+SBJson.m in Sources */,
+				BBCB710E1E9128D6007DA0E6 /* ClientDetailTableViewController.m in Sources */,
 				BB97A7DE1E8B6C5400A10CBA /* TableViewController.m in Sources */,
+				BBCB71081E902B0C007DA0E6 /* SVProgressHUD.m in Sources */,
+				BB97A8281E8DFC7C00A10CBA /* RegisterTableViewController.m in Sources */,
+				BBCB71061E902B0C007DA0E6 /* SVIndefiniteAnimatedView.m in Sources */,
 				BB1054041E85421600AEA410 /* main.m in Sources */,
 				BB4D819A1E89A3B900E7D060 /* SBJsonStreamParser.m in Sources */,
 				BB4D81A21E89A3B900E7D060 /* SBJsonUTF8Stream.m in Sources */,

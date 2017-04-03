@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "SBJson.h"
+#import "MainTableViewController.h"
+
+
 @interface ViewController ()
 
 @end
@@ -16,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [ _usersTableView setBackgroundView:
+     [[UIImageView alloc] initWithImage:
+      [UIImage imageNamed:@"helpnowcover.png"]]];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -73,39 +79,28 @@
             {
                 NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
                 NSLog(@"Response ==> %@", responseData);
-                  NSError *error = nil;
+            
                 
                 SBJsonParser *jsonParser = [SBJsonParser new];
                 NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:responseData error:nil];
                 
-                if(error) {
-                    NSLog(@"%@", error);
-                }
                 NSLog(@"Jason Parsed:%@",jsonData);
                 
                 NSInteger success = [(NSNumber *) [jsonData objectForKey:@"success"] integerValue];
                 NSLog(@"Success Number: %ld",(long)success);
- 
+                _first_name = [jsonData objectForKey:@"First_Name"];
                 NSLog(@"%@",jsonData);
          
                 if(success == 1)
                 {
                     NSLog(@"Login SUCCESS");
-          //          [self alertStatus:@"Logged in Successfully." :@"Login Success!"];
-                     NSLog(@"Logged in Successfully");
+        NSLog(@"Variable to pass: %@", _first_name);
                      [self performSegueWithIdentifier: @"loggedin" sender: self];
                 } else {
                     
                     NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
        //             [self alertFailed:error_msg :@"Login Failure! Correct your credentials"];
                     NSLog(@"Error %@", error_msg);
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error. Try Again"
-                                                                    message:[error_msg description]
-                                                                   delegate:nil
-                                                          cancelButtonTitle:@"OK"
-                                                          otherButtonTitles:nil];
-                    [alert show];
-                    
                     
                 }
                 
@@ -121,5 +116,25 @@
        NSLog(@"Login Failed.");
     }
 
+}
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    MainTableViewController *vc = [segue destinationViewController];
+      NSLog(@"Variable to pass: %@", _first_name);
+    
+    
+    if ([segue.identifier isEqualToString:@"loggedin"])
+    {
+        // Get reference to the destination view controller
+       
+        
+        // Pass any objects to the view controller here, like...
+        NSLog(@"Variable to pass: %@", _first_name);
+        vc.userString = _first_name;
+    }
 }
 @end

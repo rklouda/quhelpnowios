@@ -7,6 +7,7 @@
 //
 
 #import "ClientTableViewController.h"
+#import "ClientDetailTableViewController.h"
 
 @interface ClientTableViewController ()
 
@@ -16,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton = NO;
+
     
+  /*  UIBarButtonItem *add=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addClient)];
+    self.navigationItem.rightBarButtonItem=add;
+  */  
+  
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -28,11 +35,15 @@
     
 }
 -(void)viewWillAppear:(BOOL)animated{
-    [self loadAgentData];
+    [self loadClientData];
     
 }
+-(void)addClient{
+    NSLog(@"Add Button pressed in clientTVC");
 
--(void)loadAgentData{
+}
+
+-(void)loadClientData{
     __block NSArray *weakArray; // = _Agents;
     
     NSURL *URL = [NSURL URLWithString:@"https://quhelpnow-raklouda.c9users.io/clientIOS.php"];
@@ -59,20 +70,27 @@
                                       // self.Agents = [weakArray mutableCopy];
                                       
                                       NSLog(@"The Agent array INSIDE is = %@", weakArray);
-                                      [self end:weakArray];
+                                      [self end:jsonData];
                                   }];
     [task resume];
     
     
 }
 
-- (void)end:(NSArray *)agents
+- (void)end:(NSDictionary *)agents
 {
-    self.Agents = [agents mutableCopy];
-    NSLog(@"The Agent OUTSIDE array is = %@ count %lu", self.Agents, self.Agents.count);
-    [self.tableView reloadData];
+    self.Clients = [[agents valueForKey:@"First_Name"] mutableCopy];
+    NSLog(@"The Agent OUTSIDE array is = %@ count %lu", self.Clients, self.Clients.count);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSelectorOnMainThread:@selector(updateTable) withObject:nil waitUntilDone:NO];
+
+    });
 }
 
+-(void) updateTable
+{
+    [self.tableView reloadData];
+}
 
 
 
@@ -90,8 +108,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    NSLog(@"Count:%lu", self.Agents.count);
-    return self.Agents.count;
+    return self.Clients.count;
 }
 
 
@@ -99,31 +116,191 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    NSString *fullName = [NSString stringWithFormat:@"%@ %@",[[jsonData valueForKey:@"First_Name"]objectAtIndex:indexPath.row], [[jsonData valueForKey:@"Last_Name"] objectAtIndex:indexPath.row]];
+    cell.textLabel.text = fullName;//[[jsonData valueForKey:@"First_Name"] objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [self.Agents objectAtIndex:indexPath.row];
+    
+  //  cell.textLabel.text = [self.Clients objectAtIndex:indexPath.row];
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)sender
+{
+    
+    if ([[segue identifier] isEqualToString:@"addClient"]) {
+        
+     //   NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        ClientDetailTableViewController *destinationViewController = (ClientDetailTableViewController *)segue.destinationViewController;
+     //  destinationViewController.self.clientInfo = [[jsonData valueForKey:@"First_Name"] objectAtIndex:indexPath.row];
+        destinationViewController.title = @"Add New Client";
+     //   UIBarButtonItem *save=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(addClient)];
+     //  destinationViewController.navigationItem.rightBarButtonItem=save;
+        
+     
+        
+    }
+    
+    if ([[segue identifier] isEqualToString:@"editClient"]) {
+        
+       NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        ClientDetailTableViewController *destinationViewController = (ClientDetailTableViewController *)segue.destinationViewController;
+       destinationViewController.self.R_First_Name= [[jsonData valueForKey:@"First_Name"] objectAtIndex:indexPath.row];
+       destinationViewController.self.R_Last_Name = [[jsonData valueForKey:@"Last_Name"] objectAtIndex:indexPath.row];
+       destinationViewController.self.R_City= [[jsonData valueForKey:@"City"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_State = [[jsonData valueForKey:@"State"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_Zip_Code= [[jsonData valueForKey:@"Zip_Code"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_Phone_Number = [[jsonData valueForKey:@"Phone_Number"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_Date= [[jsonData valueForKey:@"Date"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_Number_Of_Residents = [[jsonData valueForKey:@"Number_Of_Residents"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_Agent_ID= [[jsonData valueForKey:@"Agent_ID"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_Client_ID= [[jsonData valueForKey:@"Client_ID"] objectAtIndex:indexPath.row];
+      
+        destinationViewController.title = @"Edit Client";
+       //  destinationViewController.toolbarItems = nil;
+        
+    }
+    
+}
+-(void)deleteClient
+{
+    NSLog(@"Update Client pressed in EDIT client detail");
+    
+    
+    NSURL *url = [NSURL URLWithString:@"https://quhelpnow-raklouda.c9users.io/deleteClientIOS.php"];
+    // NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+   NSString *post =[[NSString alloc] initWithFormat:@"Client_ID="];
+    
+    NSLog(@"PostData: %@",post);
+    
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                            completionHandler:
+                                  ^(NSData *data, NSURLResponse *response, NSError *error) {
+                                      // ...
+                                      NSString *responseData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                                      
+                                      NSLog(@"Response ==>%@", responseData);
+                                      
+                                      if(error) {
+                                          NSLog(@"ERROR Saving new Client:%@", error);
+                                      }
+                                      
+                                      if([responseData isEqual:@"true"])
+                                      {
+                                          NSLog(@"Client Modified SUCCESS");
+                                          
+                                          // [self performSegueWithIdentifier: @"logOut" sender: self];
+                                          
+                                          //  [self.navigationController popViewControllerAnimated:YES];
+                                          
+                                      } else {
+                                          
+                                          NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
+                                          //             [self alertFailed:error_msg :@"Login Failure! Correct your credentials"];
+                                          NSLog(@"Error %@", error_msg);
+                                          
+                                      }
+                                      
+                                  }
+                                  ];
+    [task resume];
+}
 
-/*
+
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
  // Return NO if you do not want the specified item to be editable.
  return YES;
  }
- */
 
-/*
+
+
  // Override to support editing the table view.
  - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
  if (editingStyle == UITableViewCellEditingStyleDelete) {
  // Delete the row from the data source
+     
+     NSLog(@"Update Client pressed in EDIT client detail");
+     
+     
+     NSURL *url = [NSURL URLWithString:@"https://quhelpnow-raklouda.c9users.io/deleteClientIOS.php"];
+     // NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+     
+     NSString *post =[[NSString alloc] initWithFormat:@"Client_ID=%@",[[jsonData valueForKey:@"Client_ID"] objectAtIndex:indexPath.row]];
+     
+     NSLog(@"PostData: %@",post);
+     
+     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+     
+     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+     
+     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+     [request setURL:url];
+     [request setHTTPMethod:@"POST"];
+     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+     [request setHTTPBody:postData];
+     
+     NSURLSession *session = [NSURLSession sharedSession];
+     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                             completionHandler:
+                                   ^(NSData *data, NSURLResponse *response, NSError *error) {
+                                       // ...
+                                       NSString *responseData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                                       
+                                       NSLog(@"Response ==>%@", responseData);
+                                       
+                                       if(error) {
+                                           NSLog(@"ERROR Saving new Client:%@", error);
+                                       }
+                                       
+                                       if([responseData isEqual:@"true"])
+                                       {
+                                           NSLog(@"Client Modified SUCCESS");
+                                           
+                                           // [self performSegueWithIdentifier: @"logOut" sender: self];
+                                           
+                                           //  [self.navigationController popViewControllerAnimated:YES];
+                                           
+                                       } else {
+                                           
+                                           NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
+                                           //             [self alertFailed:error_msg :@"Login Failure! Correct your credentials"];
+                                           NSLog(@"Error %@", error_msg);
+                                           
+                                       }
+                                       
+                                   }
+                                   ];
+     [task resume];
+
+     
+     
+      [self.Clients removeObjectAtIndex:indexPath.row];
+     
  [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    
+    
+     
+ }// else if (editingStyle == UITableViewCellEditingStyleInsert) {
  // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
+// }
+}
+
 
 /*
  // Override to support rearranging the table view.

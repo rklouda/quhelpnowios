@@ -7,6 +7,8 @@
 //
 
 #import "TableViewController.h"
+#import "SVProgressHUD.h"
+#import "AgentDetailTableViewController.h"
 
 @interface TableViewController ()
 
@@ -16,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+self.navigationItem.hidesBackButton = NO;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,21 +57,32 @@
                                       
                                       
                                       weakArray = [[jsonData valueForKey:@"First_Name"] mutableCopy];
+                                    //  weakArray = [[jsonData allValues] mutableCopy];
                                       
                                       // self.Agents = [weakArray mutableCopy];
                                       
                                       NSLog(@"The Agent array INSIDE is = %@", weakArray);
-                                      [self end:weakArray];
+                                      [self end:jsonData];
                                   }];
     [task resume];
     
 
 }
 
-- (void)end:(NSArray *)agents
+- (void)end:(NSDictionary *)agents
 {
-    self.Agents = [agents mutableCopy];
+   
+   // self.Agents = [agents mutableCopy];
+    self.Agents = [[agents valueForKey:@"First_Name"] mutableCopy];
     NSLog(@"The Agent OUTSIDE array is = %@ count %lu", self.Agents, self.Agents.count);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSelectorOnMainThread:@selector(updateTable) withObject:nil waitUntilDone:NO];
+        
+    });
+}
+
+-(void) updateTable
+{
     [self.tableView reloadData];
 }
 
@@ -90,7 +103,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    NSLog(@"Count:%lu", self.Agents.count);
+   // NSLog(@"Count:%lu", self.Agents.count);
     return self.Agents.count;
 }
 
@@ -100,11 +113,29 @@
     
     // Configure the cell...
     
-    cell.textLabel.text = [self.Agents objectAtIndex:indexPath.row];
+   // cell.textLabel.text = [self.Agents objectAtIndex:indexPath.row];
+   NSString *fullName = [NSString stringWithFormat:@"%@ %@",[[jsonData valueForKey:@"First_Name"]objectAtIndex:indexPath.row], [[jsonData valueForKey:@"Last_Name"] objectAtIndex:indexPath.row]];
+    cell.textLabel.text = fullName;//[[jsonData valueForKey:@"First_Name"] objectAtIndex:indexPath.row];
+    
+    NSString *ID = [NSString stringWithFormat:@"ID: %@",[[jsonData valueForKey:@"Agent_ID"]objectAtIndex:indexPath.row]];
+    cell.detailTextLabel.text = ID; //[[jsonData valueForKey:@"Agent_ID"] objectAtIndex:indexPath.row];
     return cell;
 }
-
-
+/*
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"agentDetail" sender:indexPath];
+}
+*/
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"agentDetail"])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        AgentDetailTableViewController *destViewController = segue.destinationViewController;
+        destViewController.agentInfo= [[jsonData valueForKey:@"First_Name"] objectAtIndex:indexPath.row];
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
