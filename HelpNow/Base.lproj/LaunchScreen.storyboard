@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,24 +22,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HelpNowlogo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="tGj-6C-HPv">
-                                <rect key="frame" x="67" y="194" width="238" height="240"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helpnowlogo2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Jt-nq-814">
-                                <rect key="frame" x="82" y="28" width="210" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="X15-Dn-rQE"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="134" width="375" height="399"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8Jt-nq-814" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" symbolic="YES" id="5Oe-AX-R1U"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="tGj-6C-HPv" secondAttribute="bottom" constant="233" id="DqB-3n-LHU"/>
-                            <constraint firstItem="8Jt-nq-814" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="66" id="EhR-wv-TaH"/>
-                            <constraint firstItem="8Jt-nq-814" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Po9-yH-3ze"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tGj-6C-HPv" secondAttribute="trailing" constant="54" id="acp-Zu-Rn2"/>
-                            <constraint firstItem="tGj-6C-HPv" firstAttribute="top" secondItem="8Jt-nq-814" secondAttribute="bottom" constant="83" id="j2f-gx-RvN"/>
-                            <constraint firstItem="tGj-6C-HPv" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="51" id="jDR-2v-OYg"/>
+                            <constraint firstItem="tGj-6C-HPv" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="114" id="2T9-nF-Wlg"/>
+                            <constraint firstItem="tGj-6C-HPv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="669-GF-VRt"/>
+                            <constraint firstAttribute="trailing" secondItem="tGj-6C-HPv" secondAttribute="trailing" id="DAv-hn-BJQ"/>
+                            <constraint firstItem="tGj-6C-HPv" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="npb-xN-peO"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -51,6 +41,5 @@
     </scenes>
     <resources>
         <image name="HelpNowlogo1.png" width="800" height="800"/>
-        <image name="helpnowlogo2.png" width="327" height="103"/>
     </resources>
 </document>

@@ -15,6 +15,8 @@
     //  __block NSArray *Agents;
 }
 @property(nonatomic,retain) NSMutableArray *Clients;
-
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, readonly) NSArray *searchResults;
+//@property (strong, nonatomic) UISearchController *searchController;
 @end
 

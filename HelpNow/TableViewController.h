@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "SBJson.h"
+#import "SearchResultsViewController.h"
+
 @interface TableViewController : UITableViewController
 {
     NSDictionary *jsonData;
   
   //  __block NSArray *Agents;
 }
-@property(nonatomic,retain) NSArray *Agents;
-
+@property(nonatomic,retain) NSMutableArray *Agents;
+//@property (nonatomic, strong) UISearchController *searchController;
+//@property (nonatomic, readonly) NSArray *searchResults;
 @end

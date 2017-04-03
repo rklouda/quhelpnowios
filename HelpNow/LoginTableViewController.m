@@ -8,6 +8,9 @@
 
 #import "LoginTableViewController.h"
 #import "MainTableViewController.h"
+#import "SVProgressHUD.h"
+
+
 @interface LoginTableViewController ()
 
 @end
@@ -43,15 +46,20 @@
 }
  */
 - (IBAction)login:(id)sender {
-
+  [SVProgressHUD showWithStatus:@"Loggin in..."];
     NSLog(@"login");
+ //[self performSegueWithIdentifier: @"loggedin" sender: self];
+  
     @try {
         UIApplication.sharedApplication.networkActivityIndicatorVisible = true;
+         [SVProgressHUD showWithStatus:@"Loggin in..."];
         if([[_email text] isEqualToString:@""] || [[_password text] isEqualToString:@""] ) {
             //   [self alertFailed:@"Please enter both Username and Password" :@"Login Failed!"];
-            
+             [SVProgressHUD dismiss];
+            UIApplication.sharedApplication.networkActivityIndicatorVisible = false;
         }
         else {
+           UIApplication.sharedApplication.networkActivityIndicatorVisible = true;
             NSString *post =[[NSString alloc] initWithFormat:@"Agent_Email=%@&Password=%@",[_email text],[_password text]];
             NSLog(@"PostData: %@",post);
             
@@ -87,7 +95,7 @@
                 NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:responseData error:nil];
                 
                 if(error) {
-                    NSLog(@"%@", error);
+                    NSLog(@"ERROR%@", error);
                 }
                 NSLog(@"Jason Parsed:%@",jsonData);
                 
@@ -105,11 +113,12 @@
                 
                 if(success == 1)
                 {
+                     [SVProgressHUD dismiss];
                     NSLog(@"Login SUCCESS");
         UIApplication.sharedApplication.networkActivityIndicatorVisible = false;
                     [self performSegueWithIdentifier: @"loggedin" sender: self];
                 } else {
-                    
+                     // [SVProgressHUD dismiss];
                     NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
                     //             [self alertFailed:error_msg :@"Login Failure! Correct your credentials"];
                     NSLog(@"Error %@", error_msg);
@@ -127,12 +136,15 @@
                 if (error) NSLog(@"Error: %@", error);
                 //         [self alertFailed:@"Connection Failed" :@"Login Failed!"];
                 NSLog(@"Error Connection Failed");
+                 // [SVProgressHUD dismiss];
             }
         }
+       // [SVProgressHUD dismiss];
     }
     @catch (NSException * e) {
         NSLog(@"Exception: %@", e);
         NSLog(@"Login Failed.");
+         // [SVProgressHUD dismiss];
     }
     
 }

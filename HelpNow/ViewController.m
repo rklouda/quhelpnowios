@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "SBJson.h"
 #import "MainTableViewController.h"
-
+#import "SVProgressHUD.h"
 
 @interface ViewController ()
 
@@ -43,14 +43,15 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 - (IBAction)login:(id)sender {
-    
+   [self performSegueWithIdentifier: @"loggedin" sender: self];
+    /*
     @try {
         
         if([[_email text] isEqualToString:@""] || [[_password text] isEqualToString:@""] ) {
          //   [self alertFailed:@"Please enter both Username and Password" :@"Login Failed!"];
     
         }
-        else {
+        else {  [SVProgressHUD showWithStatus:@"Loggin in..."];
             NSString *post =[[NSString alloc] initWithFormat:@"Agent_Email=%@&Password=%@",[_email text],[_password text]];
             NSLog(@"PostData: %@",post);
             
@@ -96,26 +97,29 @@
                     NSLog(@"Login SUCCESS");
         NSLog(@"Variable to pass: %@", _first_name);
                      [self performSegueWithIdentifier: @"loggedin" sender: self];
+                     [SVProgressHUD dismiss];
                 } else {
                     
                     NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
        //             [self alertFailed:error_msg :@"Login Failure! Correct your credentials"];
                     NSLog(@"Error %@", error_msg);
-                    
+                     [SVProgressHUD dismiss];
                 }
                 
             } else {
                 if (error) NSLog(@"Error: %@", error);
        //         [self alertFailed:@"Connection Failed" :@"Login Failed!"];
                  NSLog(@"Error Connection Failed");
+                 [SVProgressHUD dismiss];
             }
         }
     }
     @catch (NSException * e) {
         NSLog(@"Exception: %@", e);
        NSLog(@"Login Failed.");
+       [SVProgressHUD dismiss];
     }
-
+*/
 }
 #pragma mark - Navigation
 

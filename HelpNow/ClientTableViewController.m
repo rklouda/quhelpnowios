@@ -8,9 +8,12 @@
 
 #import "ClientTableViewController.h"
 #import "ClientDetailTableViewController.h"
+#import "SVProgressHUD.h"
+#import "SearchResultsViewController.h"
 
-@interface ClientTableViewController ()
-
+@interface ClientTableViewController ()<UISearchResultsUpdating, UISearchControllerDelegate>
+@property (strong, nonatomic) UISearchController *controller;
+@property (strong, nonatomic) NSArray *results;
 @end
 
 @implementation ClientTableViewController
@@ -18,7 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = NO;
-
+    
+    SearchResultsViewController *searchResults = (SearchResultsViewController *)self.controller.searchResultsController;
+    [self addObserver:searchResults forKeyPath:@"results" options:NSKeyValueObservingOptionNew context:nil];
     
   /*  UIBarButtonItem *add=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addClient)];
     self.navigationItem.rightBarButtonItem=add;
@@ -34,6 +39,25 @@
     
     
 }
+- (UISearchController *)controller {
+    
+    if (!_controller) {
+        
+        // instantiate search results table view
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        SearchResultsViewController *resultsController = [storyboard instantiateViewControllerWithIdentifier:@"SearchResults"];
+        
+        // create search controller
+        _controller = [[UISearchController alloc]initWithSearchResultsController:resultsController];
+        _controller.searchResultsUpdater = self;
+        
+        // optional: set the search controller delegate
+        _controller.delegate = self;
+        
+    }
+    return _controller;
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [self loadClientData];
     
@@ -45,6 +69,8 @@
 
 -(void)loadClientData{
     __block NSArray *weakArray; // = _Agents;
+    [SVProgressHUD showWithStatus:@"Loading Client..."];
+   
     
     NSURL *URL = [NSURL URLWithString:@"https://quhelpnow-raklouda.c9users.io/clientIOS.php"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
@@ -83,7 +109,7 @@
     NSLog(@"The Agent OUTSIDE array is = %@ count %lu", self.Clients, self.Clients.count);
     dispatch_async(dispatch_get_main_queue(), ^{
         [self performSelectorOnMainThread:@selector(updateTable) withObject:nil waitUntilDone:NO];
-
+ [SVProgressHUD dismiss];
     });
 }
 
@@ -300,7 +326,52 @@
  // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
 // }
 }
+# pragma mark - Search Results Updater
 
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+    // filter the search results
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains [cd] %@", self.controller.searchBar.text];
+    self.results = [self.Clients filteredArrayUsingPredicate:predicate];
+    
+    // NSLog(@"Search Results are: %@", [self.results description]);
+}
+
+- (IBAction)searchButtonPressed:(id)sender {
+    
+    // present the search controller
+    [self presentViewController:self.controller animated:YES completion:nil];
+    
+}
+
+
+# pragma mark - Search Controller Delegate (optional)
+
+- (void)didDismissSearchController:(UISearchController *)searchController {
+    
+    // called when the search controller has been dismissed
+}
+
+- (void)didPresentSearchController:(UISearchController *)searchController {
+    
+    // called when the serach controller has been presented
+}
+
+- (void)presentSearchController:(UISearchController *)searchController {
+    
+    // if you want to implement your own presentation for how the search controller is shown,
+    // you can do that here
+}
+
+- (void)willDismissSearchController:(UISearchController *)searchController {
+    
+    // called just before the search controller is dismissed
+}
+
+- (void)willPresentSearchController:(UISearchController *)searchController {
+    
+    // called just before the search controller is presented
+}
 
 /*
  // Override to support rearranging the table view.
