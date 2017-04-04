@@ -48,8 +48,8 @@
 - (IBAction)login:(id)sender {
   [SVProgressHUD showWithStatus:@"Loggin in..."];
     NSLog(@"login");
- //[self performSegueWithIdentifier: @"loggedin" sender: self];
-  
+// [self performSegueWithIdentifier: @"loggedin" sender: self];
+
     @try {
         UIApplication.sharedApplication.networkActivityIndicatorVisible = true;
          [SVProgressHUD showWithStatus:@"Loggin in..."];
@@ -81,6 +81,7 @@
             
             NSError *error = [[NSError alloc] init];
             NSHTTPURLResponse *response = nil;
+            
             NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
             
             
@@ -92,7 +93,7 @@
                 NSError *error = nil;
                 
                 SBJsonParser *jsonParser = [SBJsonParser new];
-                NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:responseData error:nil];
+                jsonData = (NSDictionary *) [jsonParser objectWithString:responseData error:nil];
                 
                 if(error) {
                     NSLog(@"ERROR%@", error);
@@ -113,6 +114,7 @@
                 
                 if(success == 1)
                 {
+                    [self end:jsonData];
                      [SVProgressHUD dismiss];
                     NSLog(@"Login SUCCESS");
         UIApplication.sharedApplication.networkActivityIndicatorVisible = false;
@@ -147,6 +149,14 @@
          // [SVProgressHUD dismiss];
     }
     
+}
+
+
+- (void)end:(NSDictionary *)agents
+{
+    self.tempJsonData = agents;
+NSLog(@"The jsonDate OUTSIDE array is = %@", self.tempJsonData);
+
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -206,18 +216,18 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     MainTableViewController *vc = [segue destinationViewController];
-    NSLog(@"Variable to pass: %@", first_name);
-    
-    
+     
     if ([segue.identifier isEqualToString:@"loggedin"])
     {
         // Get reference to the destination view controller
         
         
         // Pass any objects to the view controller here, like...
-        NSLog(@"Variable to pass: %@", first_name);
+        NSLog(@"Variable to pass: %@", self.tempJsonData);
         vc.userString = first_name;
         vc.userStringLast = last_name;
+        vc.jsonData = self.tempJsonData;
+ 
     }
 }
 @end

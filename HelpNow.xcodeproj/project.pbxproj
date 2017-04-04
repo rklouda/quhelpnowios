@@ -66,6 +66,12 @@
 		BBCB710B1E90C9F5007DA0E6 /* AgentDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB710A1E90C9F5007DA0E6 /* AgentDetailTableViewController.m */; };
 		BBCB710E1E9128D6007DA0E6 /* ClientDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB710D1E9128D6007DA0E6 /* ClientDetailTableViewController.m */; };
 		BBCFD73E1E8FBF2800B85322 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFD73D1E8FBF2800B85322 /* MainTableViewController.m */; };
+		BBF9083C1E93207C00F71325 /* AidRequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF9083B1E93207C00F71325 /* AidRequestTableViewController.m */; };
+		BBF9083F1E93209500F71325 /* AidRequestDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF9083E1E93209500F71325 /* AidRequestDetailTableViewController.m */; };
+		BBF908421E93215B00F71325 /* AidTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF908411E93215B00F71325 /* AidTypeTableViewController.m */; };
+		BBF908451E93216E00F71325 /* AidTypeDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF908441E93216E00F71325 /* AidTypeDetailTableViewController.m */; };
+		BBF908481E93220C00F71325 /* AwardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF908471E93220C00F71325 /* AwardsTableViewController.m */; };
+		BBF9084B1E93221E00F71325 /* AwardDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF9084A1E93221E00F71325 /* AwardDetailsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +183,18 @@
 		BBCB710D1E9128D6007DA0E6 /* ClientDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientDetailTableViewController.m; sourceTree = "<group>"; };
 		BBCFD73C1E8FBF2800B85322 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		BBCFD73D1E8FBF2800B85322 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		BBF9083A1E93207C00F71325 /* AidRequestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AidRequestTableViewController.h; sourceTree = "<group>"; };
+		BBF9083B1E93207C00F71325 /* AidRequestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AidRequestTableViewController.m; sourceTree = "<group>"; };
+		BBF9083D1E93209500F71325 /* AidRequestDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AidRequestDetailTableViewController.h; sourceTree = "<group>"; };
+		BBF9083E1E93209500F71325 /* AidRequestDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AidRequestDetailTableViewController.m; sourceTree = "<group>"; };
+		BBF908401E93215B00F71325 /* AidTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AidTypeTableViewController.h; sourceTree = "<group>"; };
+		BBF908411E93215B00F71325 /* AidTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AidTypeTableViewController.m; sourceTree = "<group>"; };
+		BBF908431E93216E00F71325 /* AidTypeDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AidTypeDetailTableViewController.h; sourceTree = "<group>"; };
+		BBF908441E93216E00F71325 /* AidTypeDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AidTypeDetailTableViewController.m; sourceTree = "<group>"; };
+		BBF908461E93220C00F71325 /* AwardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardsTableViewController.h; sourceTree = "<group>"; };
+		BBF908471E93220C00F71325 /* AwardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardsTableViewController.m; sourceTree = "<group>"; };
+		BBF908491E93221E00F71325 /* AwardDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardDetailsTableViewController.h; sourceTree = "<group>"; };
+		BBF9084A1E93221E00F71325 /* AwardDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardDetailsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,15 +253,27 @@
 				BB1054091E85421600AEA410 /* ViewController.m */,
 				BB97A7DC1E8B6C5400A10CBA /* TableViewController.h */,
 				BB97A7DD1E8B6C5400A10CBA /* TableViewController.m */,
+				BBCB71091E90C9F5007DA0E6 /* AgentDetailTableViewController.h */,
+				BBCB710A1E90C9F5007DA0E6 /* AgentDetailTableViewController.m */,
 				BB97A7DF1E8BE4E300A10CBA /* ClientTableViewController.h */,
 				BB97A7E01E8BE4E300A10CBA /* ClientTableViewController.m */,
+				BBCB710C1E9128D6007DA0E6 /* ClientDetailTableViewController.h */,
+				BBCB710D1E9128D6007DA0E6 /* ClientDetailTableViewController.m */,
 				BB1054351E8544A300AEA410 /* users.xcdatamodeld */,
 				BB1054391E8545C400AEA410 /* users.swift */,
 				BB10540B1E85421600AEA410 /* Main.storyboard */,
-				BBCB71091E90C9F5007DA0E6 /* AgentDetailTableViewController.h */,
-				BBCB710A1E90C9F5007DA0E6 /* AgentDetailTableViewController.m */,
-				BBCB710C1E9128D6007DA0E6 /* ClientDetailTableViewController.h */,
-				BBCB710D1E9128D6007DA0E6 /* ClientDetailTableViewController.m */,
+				BBF908461E93220C00F71325 /* AwardsTableViewController.h */,
+				BBF908471E93220C00F71325 /* AwardsTableViewController.m */,
+				BBF908491E93221E00F71325 /* AwardDetailsTableViewController.h */,
+				BBF9084A1E93221E00F71325 /* AwardDetailsTableViewController.m */,
+				BBF908401E93215B00F71325 /* AidTypeTableViewController.h */,
+				BBF908411E93215B00F71325 /* AidTypeTableViewController.m */,
+				BBF908431E93216E00F71325 /* AidTypeDetailTableViewController.h */,
+				BBF908441E93216E00F71325 /* AidTypeDetailTableViewController.m */,
+				BBF9083A1E93207C00F71325 /* AidRequestTableViewController.h */,
+				BBF9083B1E93207C00F71325 /* AidRequestTableViewController.m */,
+				BBF9083D1E93209500F71325 /* AidRequestDetailTableViewController.h */,
+				BBF9083E1E93209500F71325 /* AidRequestDetailTableViewController.m */,
 				BBCFD73C1E8FBF2800B85322 /* MainTableViewController.h */,
 				BBCFD73D1E8FBF2800B85322 /* MainTableViewController.m */,
 				BB97A8241E8D2BC800A10CBA /* LoginTableViewController.h */,
@@ -530,9 +560,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF9083C1E93207C00F71325 /* AidRequestTableViewController.m in Sources */,
 				BBCFD73E1E8FBF2800B85322 /* MainTableViewController.m in Sources */,
 				BB4D819D1E89A3B900E7D060 /* SBJsonStreamParserState.m in Sources */,
 				BB97A8261E8D2BC800A10CBA /* LoginTableViewController.m in Sources */,
+				BBF908421E93215B00F71325 /* AidTypeTableViewController.m in Sources */,
 				BB4D81991E89A3B900E7D060 /* SBJsonParser.m in Sources */,
 				BB4D819C1E89A3B900E7D060 /* SBJsonStreamParserAdapter.m in Sources */,
 				BB1054371E8544A300AEA410 /* users.xcdatamodeld in Sources */,
@@ -546,10 +578,13 @@
 				BB4D819F1E89A3B900E7D060 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				BBCB710B1E90C9F5007DA0E6 /* AgentDetailTableViewController.m in Sources */,
 				BB1054071E85421600AEA410 /* AppDelegate.m in Sources */,
+				BBF9084B1E93221E00F71325 /* AwardDetailsTableViewController.m in Sources */,
 				BB4D81A11E89A3B900E7D060 /* SBJsonTokeniser.m in Sources */,
+				BBF908451E93216E00F71325 /* AidTypeDetailTableViewController.m in Sources */,
 				BB4D81981E89A3B900E7D060 /* NSObject+SBJson.m in Sources */,
 				BBCB710E1E9128D6007DA0E6 /* ClientDetailTableViewController.m in Sources */,
 				BB97A7DE1E8B6C5400A10CBA /* TableViewController.m in Sources */,
+				BBF9083F1E93209500F71325 /* AidRequestDetailTableViewController.m in Sources */,
 				BBCB71081E902B0C007DA0E6 /* SVProgressHUD.m in Sources */,
 				BB97A8281E8DFC7C00A10CBA /* RegisterTableViewController.m in Sources */,
 				BBCB71061E902B0C007DA0E6 /* SVIndefiniteAnimatedView.m in Sources */,
@@ -557,6 +592,7 @@
 				BB4D819A1E89A3B900E7D060 /* SBJsonStreamParser.m in Sources */,
 				BB4D81A21E89A3B900E7D060 /* SBJsonUTF8Stream.m in Sources */,
 				BB4D81A31E89A3B900E7D060 /* SBJsonWriter.m in Sources */,
+				BBF908481E93220C00F71325 /* AwardsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

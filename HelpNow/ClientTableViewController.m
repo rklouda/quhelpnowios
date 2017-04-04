@@ -9,11 +9,9 @@
 #import "ClientTableViewController.h"
 #import "ClientDetailTableViewController.h"
 #import "SVProgressHUD.h"
-#import "SearchResultsViewController.h"
+//#import "SearchResultsViewController.h"
 
-@interface ClientTableViewController ()<UISearchResultsUpdating, UISearchControllerDelegate>
-@property (strong, nonatomic) UISearchController *controller;
-@property (strong, nonatomic) NSArray *results;
+@interface ClientTableViewController ()
 @end
 
 @implementation ClientTableViewController
@@ -21,9 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = NO;
-    
-    SearchResultsViewController *searchResults = (SearchResultsViewController *)self.controller.searchResultsController;
-    [self addObserver:searchResults forKeyPath:@"results" options:NSKeyValueObservingOptionNew context:nil];
     
   /*  UIBarButtonItem *add=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addClient)];
     self.navigationItem.rightBarButtonItem=add;
@@ -39,24 +34,7 @@
     
     
 }
-- (UISearchController *)controller {
-    
-    if (!_controller) {
-        
-        // instantiate search results table view
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        SearchResultsViewController *resultsController = [storyboard instantiateViewControllerWithIdentifier:@"SearchResults"];
-        
-        // create search controller
-        _controller = [[UISearchController alloc]initWithSearchResultsController:resultsController];
-        _controller.searchResultsUpdater = self;
-        
-        // optional: set the search controller delegate
-        _controller.delegate = self;
-        
-    }
-    return _controller;
-}
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [self loadClientData];
@@ -173,6 +151,7 @@
        destinationViewController.self.R_First_Name= [[jsonData valueForKey:@"First_Name"] objectAtIndex:indexPath.row];
        destinationViewController.self.R_Last_Name = [[jsonData valueForKey:@"Last_Name"] objectAtIndex:indexPath.row];
        destinationViewController.self.R_City= [[jsonData valueForKey:@"City"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_Street = [[jsonData valueForKey:@"Street"] objectAtIndex:indexPath.row];
         destinationViewController.self.R_State = [[jsonData valueForKey:@"State"] objectAtIndex:indexPath.row];
         destinationViewController.self.R_Zip_Code= [[jsonData valueForKey:@"Zip_Code"] objectAtIndex:indexPath.row];
         destinationViewController.self.R_Phone_Number = [[jsonData valueForKey:@"Phone_Number"] objectAtIndex:indexPath.row];
@@ -180,6 +159,7 @@
         destinationViewController.self.R_Number_Of_Residents = [[jsonData valueForKey:@"Number_Of_Residents"] objectAtIndex:indexPath.row];
         destinationViewController.self.R_Agent_ID= [[jsonData valueForKey:@"Agent_ID"] objectAtIndex:indexPath.row];
         destinationViewController.self.R_Client_ID= [[jsonData valueForKey:@"Client_ID"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_Social_Security_Number= [[jsonData valueForKey:@"Social_Security_Number"] objectAtIndex:indexPath.row];
       
         destinationViewController.title = @"Edit Client";
        //  destinationViewController.toolbarItems = nil;
@@ -325,52 +305,6 @@
  }// else if (editingStyle == UITableViewCellEditingStyleInsert) {
  // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
 // }
-}
-# pragma mark - Search Results Updater
-
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    
-    // filter the search results
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains [cd] %@", self.controller.searchBar.text];
-    self.results = [self.Clients filteredArrayUsingPredicate:predicate];
-    
-    // NSLog(@"Search Results are: %@", [self.results description]);
-}
-
-- (IBAction)searchButtonPressed:(id)sender {
-    
-    // present the search controller
-    [self presentViewController:self.controller animated:YES completion:nil];
-    
-}
-
-
-# pragma mark - Search Controller Delegate (optional)
-
-- (void)didDismissSearchController:(UISearchController *)searchController {
-    
-    // called when the search controller has been dismissed
-}
-
-- (void)didPresentSearchController:(UISearchController *)searchController {
-    
-    // called when the serach controller has been presented
-}
-
-- (void)presentSearchController:(UISearchController *)searchController {
-    
-    // if you want to implement your own presentation for how the search controller is shown,
-    // you can do that here
-}
-
-- (void)willDismissSearchController:(UISearchController *)searchController {
-    
-    // called just before the search controller is dismissed
-}
-
-- (void)willPresentSearchController:(UISearchController *)searchController {
-    
-    // called just before the search controller is presented
 }
 
 /*

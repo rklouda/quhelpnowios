@@ -11,11 +11,16 @@
 
 @interface LoginTableViewController : UITableViewController
 //@property (weak, nonatomic) IBOutlet UITableView *usersTableView;
-{}
+
+{
+    NSDictionary *jsonData;
+
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *password;
-@property (weak, nonatomic) IBOutlet NSString *first_name, *last_name;
+@property (weak, nonatomic) IBOutlet NSString *first_name, *last_name, *Agent_ID;
 @property (weak, nonatomic) IBOutlet UIButton *login;
+@property (weak, nonatomic) NSDictionary *tempJsonData;
 
 @end

@@ -138,7 +138,7 @@ self.navigationItem.hidesBackButton = NO;
         //   NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         AgentDetailTableViewController *destinationViewController = (AgentDetailTableViewController *)segue.destinationViewController;
         //  destinationViewController.self.clientInfo = [[jsonData valueForKey:@"First_Name"] objectAtIndex:indexPath.row];
-        destinationViewController.title = @"Add New Client";
+        destinationViewController.title = @"Add New Agent";
         //   UIBarButtonItem *save=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(addClient)];
         //  destinationViewController.navigationItem.rightBarButtonItem=save;
         
@@ -156,12 +156,11 @@ self.navigationItem.hidesBackButton = NO;
         destinationViewController.self.R_State = [[jsonData valueForKey:@"State"] objectAtIndex:indexPath.row];
         destinationViewController.self.R_Zip_Code= [[jsonData valueForKey:@"Zip_Code"] objectAtIndex:indexPath.row];
         destinationViewController.self.R_Phone_Number = [[jsonData valueForKey:@"Phone_Number"] objectAtIndex:indexPath.row];
-        destinationViewController.self.R_Date= [[jsonData valueForKey:@"Date"] objectAtIndex:indexPath.row];
-        destinationViewController.self.R_Number_Of_Residents = [[jsonData valueForKey:@"Number_Of_Residents"] objectAtIndex:indexPath.row];
-        destinationViewController.self.R_Agent_ID= [[jsonData valueForKey:@"Agent_ID"] objectAtIndex:indexPath.row];
-        destinationViewController.self.R_Client_ID= [[jsonData valueForKey:@"Client_ID"] objectAtIndex:indexPath.row];
-        
-        destinationViewController.title = @"Edit Client";
+        destinationViewController.self.R_Date_Hired= [[jsonData valueForKey:@"Date_Hired"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_Agent_Email= [[jsonData valueForKey:@"Agent_Email"] objectAtIndex:indexPath.row];
+         destinationViewController.self.R_Agent_ID= [[jsonData valueForKey:@"Agent_ID"] objectAtIndex:indexPath.row];
+         destinationViewController.self.R_Street= [[jsonData valueForKey:@"Street"] objectAtIndex:indexPath.row];
+      //  destinationViewController.title = @"Edit Agent";
         //  destinationViewController.toolbarItems = nil;
         
     }
