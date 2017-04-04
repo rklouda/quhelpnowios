@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -223,17 +222,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="dEo-m4-M8j">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="OSL-Qd-Rjd" id="Kl3-lX-Sf6"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="ZJn-w0-HhU" detailTextLabel="ocb-vc-RIn" style="IBUITableViewCellStyleSubtitle" id="4k2-PZ-whd">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4k2-PZ-whd" id="ZAf-yf-kGs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -270,7 +261,6 @@
                 <searchDisplayController id="vTo-VO-sO8">
                     <connections>
                         <outlet property="delegate" destination="OSL-Qd-Rjd" id="zus-Bb-pPd"/>
-                        <outlet property="searchBar" destination="dEo-m4-M8j" id="hdw-Nq-yFd"/>
                         <outlet property="searchContentsController" destination="OSL-Qd-Rjd" id="xJq-78-3dN"/>
                         <outlet property="searchResultsDataSource" destination="OSL-Qd-Rjd" id="zyr-yd-9qe"/>
                         <outlet property="searchResultsDelegate" destination="OSL-Qd-Rjd" id="0dt-gw-Ty3"/>
@@ -406,17 +396,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="C5v-VG-xkv">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="B9B-zi-CL3" id="dKe-5m-KAg"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Fnu-kd-Jeg">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fnu-kd-Jeg" id="VZM-re-AVf">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -432,18 +414,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Clients" id="0kn-X9-uyA">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="COy-b9-RtK">
-                                <connections>
-                                    <segue destination="bAA-zm-npa" kind="show" identifier="addClient" id="6mU-Pu-RVE"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="search" id="RMW-YA-NFB">
-                                <connections>
-                                    <action selector="searchButtonPressed:" destination="B9B-zi-CL3" id="lpX-cG-UP7"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="COy-b9-RtK">
+                            <connections>
+                                <segue destination="bAA-zm-npa" kind="show" identifier="addClient" id="6mU-Pu-RVE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="dQp-FB-ZKu" id="sfi-bC-PFJ"/>
@@ -453,7 +428,6 @@
                 <searchDisplayController id="dQp-FB-ZKu">
                     <connections>
                         <outlet property="delegate" destination="B9B-zi-CL3" id="g95-OA-O9d"/>
-                        <outlet property="searchBar" destination="C5v-VG-xkv" id="gaI-8c-08L"/>
                         <outlet property="searchContentsController" destination="B9B-zi-CL3" id="LFn-Ih-gRi"/>
                         <outlet property="searchResultsDataSource" destination="B9B-zi-CL3" id="E6x-mP-a1a"/>
                         <outlet property="searchResultsDelegate" destination="B9B-zi-CL3" id="LdN-KV-z3l"/>
@@ -686,7 +660,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wP-Vd-p8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2388" y="864"/>
+            <point key="canvasLocation" x="-3146" y="913"/>
         </scene>
         <!--Clients Details-->
         <scene sceneID="Cjx-Tq-jeN">
@@ -1272,17 +1246,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="lk3-Pp-XgA">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="qqI-UU-LSu" id="gAg-nf-Yiy"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="BQy-VZ-3yf">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BQy-VZ-3yf" id="pxs-Eq-Qu2">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -1300,20 +1266,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Aid Request" id="NwV-wg-oJD">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="9nF-YI-o28">
-                                <connections>
-                                    <segue destination="SXw-gO-1lJ" kind="show" identifier="addAidRequest" id="XNu-Hy-SOv">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="search" id="Pxl-p6-R7s">
-                                <connections>
-                                    <action selector="searchButtonPressed:" destination="qqI-UU-LSu" id="aqZ-Hn-cfV"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9nF-YI-o28">
+                            <connections>
+                                <segue destination="SXw-gO-1lJ" kind="show" identifier="addAidRequest" id="XNu-Hy-SOv">
+                                    <nil key="action"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="dQp-FB-ZKu" id="BE6-6U-LKH"/>
@@ -1323,7 +1282,6 @@
                 <searchDisplayController id="G0M-9s-i6b">
                     <connections>
                         <outlet property="delegate" destination="qqI-UU-LSu" id="rWl-uW-UBi"/>
-                        <outlet property="searchBar" destination="lk3-Pp-XgA" id="pTZ-Dz-bnF"/>
                         <outlet property="searchContentsController" destination="qqI-UU-LSu" id="Bqw-eu-vlw"/>
                         <outlet property="searchResultsDataSource" destination="qqI-UU-LSu" id="SIn-UD-VDa"/>
                         <outlet property="searchResultsDelegate" destination="qqI-UU-LSu" id="5or-Bc-gmU"/>
@@ -1572,17 +1530,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="swu-KP-uXx">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="aYp-YR-CUP" id="daF-86-zLH"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="QCT-4t-YhF">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QCT-4t-YhF" id="c5O-rJ-Ydn">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -1600,20 +1550,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Awards" id="uS2-Dk-WSd">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="NkD-zU-VWN">
-                                <connections>
-                                    <segue destination="XGu-4V-c98" kind="show" identifier="addClient" id="5mq-Ht-5y0">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="search" id="5dQ-XL-ma3">
-                                <connections>
-                                    <action selector="searchButtonPressed:" destination="aYp-YR-CUP" id="KA4-6Q-qKG"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NkD-zU-VWN">
+                            <connections>
+                                <segue destination="XGu-4V-c98" kind="show" identifier="addClient" id="5mq-Ht-5y0">
+                                    <nil key="action"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="dQp-FB-ZKu" id="4w8-8R-gRq"/>
@@ -1623,7 +1566,6 @@
                 <searchDisplayController id="L92-Wn-yFM">
                     <connections>
                         <outlet property="delegate" destination="aYp-YR-CUP" id="RA3-tY-MwA"/>
-                        <outlet property="searchBar" destination="swu-KP-uXx" id="dYt-aE-P5J"/>
                         <outlet property="searchContentsController" destination="aYp-YR-CUP" id="eit-Ij-uIf"/>
                         <outlet property="searchResultsDataSource" destination="aYp-YR-CUP" id="gbV-fq-THa"/>
                         <outlet property="searchResultsDelegate" destination="aYp-YR-CUP" id="An8-2K-1vX"/>
@@ -1747,7 +1689,7 @@
         <image name="helpnowlogo2.png" width="327" height="103"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6b8-8N-CoH"/>
+        <segue reference="AWW-fo-TvP"/>
         <segue reference="KMp-IR-Ibd"/>
         <segue reference="RUn-4p-das"/>
         <segue reference="S9o-WH-vgr"/>
