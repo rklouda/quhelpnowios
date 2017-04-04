@@ -116,10 +116,9 @@
                                           if(success == 1)
                                           {
                                               NSLog(@"logOut SUCCESS");
-                                    
-                                              [self performSegueWithIdentifier: @"logOut" sender: self];
-                                                UIApplication.sharedApplication.networkActivityIndicatorVisible = false;
-                                              [SVProgressHUD dismiss];
+                                              UIApplication.sharedApplication.networkActivityIndicatorVisible = false;
+                                           
+                                           
                                           } else {
                                               
                                               NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
@@ -131,6 +130,8 @@
                                   }
                                   ];
     [task resume];
+    [SVProgressHUD dismiss];
+    [self performSegueWithIdentifier: @"logOut" sender: self];
 
 }
 

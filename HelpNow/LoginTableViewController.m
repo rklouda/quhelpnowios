@@ -120,7 +120,7 @@
         UIApplication.sharedApplication.networkActivityIndicatorVisible = false;
                     [self performSegueWithIdentifier: @"loggedin" sender: self];
                 } else {
-                     // [SVProgressHUD dismiss];
+                      [SVProgressHUD dismiss];
                     NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
                     //             [self alertFailed:error_msg :@"Login Failure! Correct your credentials"];
                     NSLog(@"Error %@", error_msg);
@@ -138,7 +138,7 @@
                 if (error) NSLog(@"Error: %@", error);
                 //         [self alertFailed:@"Connection Failed" :@"Login Failed!"];
                 NSLog(@"Error Connection Failed");
-                 // [SVProgressHUD dismiss];
+                  [SVProgressHUD dismiss];
             }
         }
        // [SVProgressHUD dismiss];
