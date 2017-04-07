@@ -72,6 +72,7 @@
 		BBF908451E93216E00F71325 /* AidTypeDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF908441E93216E00F71325 /* AidTypeDetailTableViewController.m */; };
 		BBF908481E93220C00F71325 /* AwardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF908471E93220C00F71325 /* AwardsTableViewController.m */; };
 		BBF9084B1E93221E00F71325 /* AwardDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF9084A1E93221E00F71325 /* AwardDetailsTableViewController.m */; };
+		BBF9084E1E94936D00F71325 /* ColorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF9084D1E94936D00F71325 /* ColorTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +196,8 @@
 		BBF908471E93220C00F71325 /* AwardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardsTableViewController.m; sourceTree = "<group>"; };
 		BBF908491E93221E00F71325 /* AwardDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardDetailsTableViewController.h; sourceTree = "<group>"; };
 		BBF9084A1E93221E00F71325 /* AwardDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardDetailsTableViewController.m; sourceTree = "<group>"; };
+		BBF9084C1E94936D00F71325 /* ColorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTableViewController.h; sourceTree = "<group>"; };
+		BBF9084D1E94936D00F71325 /* ColorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +265,8 @@
 				BB1054351E8544A300AEA410 /* users.xcdatamodeld */,
 				BB1054391E8545C400AEA410 /* users.swift */,
 				BB10540B1E85421600AEA410 /* Main.storyboard */,
+				BBF9084C1E94936D00F71325 /* ColorTableViewController.h */,
+				BBF9084D1E94936D00F71325 /* ColorTableViewController.m */,
 				BBF908461E93220C00F71325 /* AwardsTableViewController.h */,
 				BBF908471E93220C00F71325 /* AwardsTableViewController.m */,
 				BBF908491E93221E00F71325 /* AwardDetailsTableViewController.h */,
@@ -581,6 +586,7 @@
 				BBF9084B1E93221E00F71325 /* AwardDetailsTableViewController.m in Sources */,
 				BB4D81A11E89A3B900E7D060 /* SBJsonTokeniser.m in Sources */,
 				BBF908451E93216E00F71325 /* AidTypeDetailTableViewController.m in Sources */,
+				BBF9084E1E94936D00F71325 /* ColorTableViewController.m in Sources */,
 				BB4D81981E89A3B900E7D060 /* NSObject+SBJson.m in Sources */,
 				BBCB710E1E9128D6007DA0E6 /* ClientDetailTableViewController.m in Sources */,
 				BB97A7DE1E8B6C5400A10CBA /* TableViewController.m in Sources */,

@@ -9,7 +9,11 @@
 #import "MainTableViewController.h"
 #import "SVProgressHUD.h"
 #import "AgentDetailTableViewController.h"
+#import "AidRequestTableViewController.h"
+
+
 @interface MainTableViewController ()
+
 
 @end
 
@@ -154,6 +158,15 @@
   destinationViewController.self.R_Agent_ID= [jsonData valueForKey:@"Agent_ID"];
     
       //  destinationViewController.title = @"Edit Agent";
+        //  destinationViewController.toolbarItems = nil;
+        
+    }
+    if ([[segue identifier] isEqualToString:@"aidRequest"]) {
+        
+        AidRequestTableViewController *destinationViewController = (AidRequestTableViewController*)segue.destinationViewController;
+        destinationViewController.self.AgentjsonData = self.jsonData;
+      
+        //  destinationViewController.title = @"Edit Agent";
         //  destinationViewController.toolbarItems = nil;
         
     }

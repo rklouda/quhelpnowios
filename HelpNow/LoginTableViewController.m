@@ -226,7 +226,7 @@ NSLog(@"The jsonDate OUTSIDE array is = %@", self.tempJsonData);
         NSLog(@"Variable to pass: %@", self.tempJsonData);
         vc.userString = first_name;
         vc.userStringLast = last_name;
-        vc.jsonData = self.tempJsonData;
+        vc.jsonData = self.tempJsonData;  //logged in user
  
     }
 }

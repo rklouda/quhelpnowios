@@ -166,7 +166,7 @@ self.navigationItem.hidesBackButton = NO;
     }
     
 }
-
+/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
@@ -174,7 +174,7 @@ self.navigationItem.hidesBackButton = NO;
 }
 
 
-
+//DELETE WORKS WELL
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -247,6 +247,7 @@ self.navigationItem.hidesBackButton = NO;
     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     // }
 }
+ */
 # pragma mark - Search Results Updater
 /*
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AwardsTableViewController : UITableViewController
+{
+    NSDictionary *jsonData;
 
+}
+@property(nonatomic,retain) NSMutableArray *Awards;
 @end

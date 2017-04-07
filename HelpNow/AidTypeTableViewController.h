@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SBJson.h"
 @interface AidTypeTableViewController : UITableViewController
+{
+    NSDictionary *Aidjsondata;
+}
+//@property(nonatomic,retain) NSDictionary *AidjsonData;
+@property(nonatomic,retain) NSMutableArray *AidTypes;
 
 @end
