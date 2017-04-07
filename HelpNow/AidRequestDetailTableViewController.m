@@ -35,7 +35,7 @@
     _Documentation_Provided.delegate = self;
     _Aid_ID.delegate = self;
     _Award_ID.delegate = self;
-    _Request_ID.delegate = self;
+ //   _Request_ID.delegate = self;
 
     
     self.Date_Requested.tag = 1;
@@ -53,7 +53,7 @@
         update.enabled = NO;
         
         self.Request_ID.text = self.R_Request_ID;
-    self.Amount_Requested.text = self.R_Amount_Requested;
+        self.Amount_Requested.text = self.R_Amount_Requested;
         self.Date_Requested.text = self.R_Date_Requested;
         self.Documentation_Provided.text = self.R_Documentation_Provided;
         self.Decision.text = self.R_Decision;
@@ -188,14 +188,9 @@
                                       {
                                           NSLog(@"Client ADD SUCCESS");
                                           
-                                          // [self performSegueWithIdentifier: @"logOut" sender: self];
-                                          
-                                          //  [self.navigationController popViewControllerAnimated:YES];
                                           
                                       } else {
                                           
-                                       //   NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
-                                          //             [self alertFailed:error_msg :@"Login Failure! Correct your credentials"];
                                           NSLog(@"Error %@", error);
                                           
                                       }
@@ -210,7 +205,7 @@
 
 -(void)update1
 {
-    NSLog(@"Update Client pressed in EDIT client detail");
+    NSLog(@"Update Aid Request pressed in EDIT AidRequest detail");
     
     //  UIApplication.sharedApplication.networkActivityIndicatorVisible = true;
     //  [SVProgressHUD showWithStatus:@"Updating Client..."];
@@ -220,8 +215,9 @@
     // NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
   
-     NSString *post =[[NSString alloc] initWithFormat:@"Request_ID=%@&Amount_Requested=%@&Decision=%@&Date_Requested=%@&Documentation_Provided=%@&Client_Notes=%@",[_Request_ID text],[_Amount_Requested text],[_Decision text],[_Date_Requested text],[_Documentation_Provided text],[_Client_Notes text]];
+     NSString *post =[[NSString alloc] initWithFormat:@"Request_ID=%@&Amount_Requested=%@&Decision=%@&Date_Requested=%@&Documentation_Provided=%@&Client_Notes=%@",self.R_Request_ID,[_Amount_Requested text],[_Decision text],[_Date_Requested text],[_Documentation_Provided text],[_Client_Notes text]];
     
+    NSLog(@"HELP: %@", self.R_Request_ID);
     
     NSLog(@"PostData: %@",post);
     

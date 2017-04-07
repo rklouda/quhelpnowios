@@ -36,10 +36,8 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)loadAidRequestData{
-    [SVProgressHUD showWithStatus:@"Loading AidTypes..."];
-    
-    __block NSArray *weakArray; // = _Agents;
-    
+    [SVProgressHUD showWithStatus:@"Loading Aid Requests..."];
+
     NSURL *URL = [NSURL URLWithString:@"https://quhelpnow-raklouda.c9users.io/aidRequestsIOS.php"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
@@ -55,16 +53,8 @@
                                       if(error) {
                                           NSLog(@"%@", error);
                                       }
-                                      NSLog(@"Jason Parsed for TableView:%@",self.AidjsonData);
-                                      //  self.Agents = [jsonData valueForKey:@"First_Name"];
-                                      
-                                      
-                                  //    weakArray = [[self.AidjsonData valueForKey:@"First_Name"] mutableCopy];
-                                      //  weakArray = [[jsonData allValues] mutableCopy];
-                                      
-                                      // self.Agents = [weakArray mutableCopy];
-                                      
-                                  //    NSLog(@"The Agent array INSIDE is = %@", weakArray);
+                                      NSLog(@"AidJason Parsed for TableView:%@",self.AidjsonData);
+                          
                                       [self end:self.AidjsonData];
                                   }];
     [task resume];
@@ -72,8 +62,7 @@
     
 }- (void)end:(NSDictionary *)agents
 {
-    
-    // self.Agents = [agents mutableCopy];
+
     self.AidRequests= [[agents valueForKey:@"Request_ID"] mutableCopy];
     NSLog(@"The AidRequest OUTSIDE array is = %@ count %lu", self.AidRequests, self.AidRequests.count);
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -86,12 +75,11 @@
 {
     [self.tableView reloadData];
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     [self loadAidRequestData];
     
 }
-
-
 
 #pragma mark - Table view data source
 
@@ -115,7 +103,8 @@
         destinationViewController.self.agentjsonData = self.AgentjsonData;
      destinationViewController.self.R_Request_ID = [[self.AidjsonData valueForKey:@"Request_ID"] objectAtIndex:indexPath.row];
          destinationViewController.self.R_Date_Requested= [[self.AidjsonData valueForKey:@"Date_Requested"] objectAtIndex:indexPath.row];
-         destinationViewController.self.Amount_Requested = [[self.AidjsonData valueForKey:@"Amount_Requested"] objectAtIndex:indexPath.row];
+         destinationViewController.self.R_Amount_Requested = [[self.AidjsonData valueForKey:@"Amount_Requested"] objectAtIndex:indexPath.row];
+        destinationViewController.self.R_Award_ID = [[self.AidjsonData valueForKey:@"Award_ID"] objectAtIndex:indexPath.row];
          destinationViewController.self.R_Decision = [[self.AidjsonData valueForKey:@"Decision"] objectAtIndex:indexPath.row];
          destinationViewController.self.R_Client_Notes = [[self.AidjsonData valueForKey:@"Client_Notes"] objectAtIndex:indexPath.row];
          destinationViewController.self.R_Aid_ID= [[self.AidjsonData valueForKey:@"Aid_ID"] objectAtIndex:indexPath.row];
