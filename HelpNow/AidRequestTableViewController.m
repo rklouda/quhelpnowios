@@ -109,7 +109,7 @@
          destinationViewController.self.R_Client_Notes = [[self.AidjsonData valueForKey:@"Client_Notes"] objectAtIndex:indexPath.row];
          destinationViewController.self.R_Aid_ID= [[self.AidjsonData valueForKey:@"Aid_ID"] objectAtIndex:indexPath.row];
          destinationViewController.self.R_Documentation_Provided = [[self.AidjsonData valueForKey:@"Documentation_Provided"] objectAtIndex:indexPath.row];
-        
+         destinationViewController.self.R_Client_ID = [[self.AidjsonData valueForKey:@"Client_ID"] objectAtIndex:indexPath.row];
         
         //  destinationViewController.title = @"Edit Agent";
         //  destinationViewController.toolbarItems = nil;

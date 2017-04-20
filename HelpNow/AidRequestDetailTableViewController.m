@@ -53,7 +53,7 @@
         update.enabled = NO;
         
         self.Request_ID.text = self.R_Request_ID;
-        self.Amount_Requested.text = self.R_Amount_Requested;
+        self.Amount_Requested.text = [NSString stringWithFormat:@"$%@", self.R_Amount_Requested];
         self.Date_Requested.text = self.R_Date_Requested;
         self.Documentation_Provided.text = self.R_Documentation_Provided;
         self.Decision.text = self.R_Decision;
@@ -82,7 +82,9 @@
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"dd/MM/yyyy"];
         self.R_Date_Requested = [dateFormat stringFromDate:today];
+         self.Date_Requested.text = self.R_Date_Requested;
         NSLog(@"date: %@", self.R_Date_Requested);
+        self.Decision.text = @"Pending";
     }
 
     
@@ -153,8 +155,16 @@
     // NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     //NSString *post =[[NSString alloc] initWithFormat:@"name=%@&last=%@",[_First_Name text],[_Last_Name text]];
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    self.R_Date_Requested = [dateFormat stringFromDate:today];
+    self.Date_Requested.text = self.R_Date_Requested;
+    NSLog(@"date: %@", self.R_Date_Requested);
     
-    NSString *post =[[NSString alloc] initWithFormat:@"Agent_ID=%@&Amount_Requested=%@&Decision=%@&Date_Requested=%@&Documentation_Provided=%@&Client_Notes=%@",[self.agentjsonData  valueForKey:@"Agent_ID"],[_Amount_Requested text],[_Decision text],[_Date_Requested text],[_Documentation_Provided text],[_Client_Notes text]];
+    NSDate *dte = [dateFormat dateFromString:self.Date_Requested.text];
+    
+    NSString *post =[[NSString alloc] initWithFormat:@"Agent_ID=%@&Amount_Requested=%@&Decision=%@&Date_Requested=%@&Documentation_Provided=%@&Client_Notes=%@&Client_ID%@&Aid_ID%@",[self.agentjsonData  valueForKey:@"Agent_ID"],[_Amount_Requested text],[_Decision text],dte,[_Documentation_Provided text],[_Client_Notes text], [_Client_ID text], [_Aid_ID text]];
     
     
     NSLog(@"PostData: %@",post);
@@ -200,6 +210,9 @@
     [task resume];
     
     [self.navigationController popViewControllerAnimated:YES];
+    
+    [self Alert:@"Decision is pending approval.  We encourage you to check back often or visit us at www.helpnow.com"];
+    
 }
 
 
@@ -215,7 +228,7 @@
     // NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
   
-     NSString *post =[[NSString alloc] initWithFormat:@"Request_ID=%@&Amount_Requested=%@&Decision=%@&Date_Requested=%@&Documentation_Provided=%@&Client_Notes=%@",self.R_Request_ID,[_Amount_Requested text],[_Decision text],[_Date_Requested text],[_Documentation_Provided text],[_Client_Notes text]];
+     NSString *post =[[NSString alloc] initWithFormat:@"Request_ID=%@&Amount_Requested=%@&Decision=%@&Date_Requested=%@&Documentation_Provided=%@&Client_Notes=%@&Client_ID%@&Aid_ID%@",self.R_Request_ID,[_Amount_Requested text],[_Decision text],[_Date_Requested text],[_Documentation_Provided text],[_Client_Notes text],[_Client_ID text],[_Aid_ID text]];
     
     NSLog(@"HELP: %@", self.R_Request_ID);
     

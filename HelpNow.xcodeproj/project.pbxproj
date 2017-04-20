@@ -16,6 +16,8 @@
 		BB1054281E85421700AEA410 /* HelpNowUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1054271E85421700AEA410 /* HelpNowUITests.m */; };
 		BB1054371E8544A300AEA410 /* users.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB1054351E8544A300AEA410 /* users.xcdatamodeld */; };
 		BB10543A1E8545C400AEA410 /* users.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1054391E8545C400AEA410 /* users.swift */; };
+		BB2B9C0F1EA2645700D38BE4 /* HelpNow logo HD dark grey.png in Resources */ = {isa = PBXBuildFile; fileRef = BB2B9C0E1EA2645600D38BE4 /* HelpNow logo HD dark grey.png */; };
+		BB2B9C111EA265F200D38BE4 /* helpnowlogo21.png in Resources */ = {isa = PBXBuildFile; fileRef = BB2B9C101EA265F200D38BE4 /* helpnowlogo21.png */; };
 		BB4D81791E899DDC00E7D060 /* helpnowcover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB4D81781E899DDC00E7D060 /* helpnowcover.jpg */; };
 		BB4D817B1E899DF300E7D060 /* HelpNowlogo1.png in Resources */ = {isa = PBXBuildFile; fileRef = BB4D817A1E899DF300E7D060 /* HelpNowlogo1.png */; };
 		BB4D817D1E899E0400E7D060 /* helpnowlogo2.png in Resources */ = {isa = PBXBuildFile; fileRef = BB4D817C1E899E0400E7D060 /* helpnowlogo2.png */; };
@@ -111,6 +113,8 @@
 		BB1054361E8544A300AEA410 /* users.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = users.xcdatamodel; sourceTree = "<group>"; };
 		BB1054381E8545C400AEA410 /* HelpNow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelpNow-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB1054391E8545C400AEA410 /* users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = users.swift; sourceTree = "<group>"; };
+		BB2B9C0E1EA2645600D38BE4 /* HelpNow logo HD dark grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HelpNow logo HD dark grey.png"; sourceTree = "<group>"; };
+		BB2B9C101EA265F200D38BE4 /* helpnowlogo21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helpnowlogo21.png; sourceTree = "<group>"; };
 		BB4D81781E899DDC00E7D060 /* helpnowcover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = helpnowcover.jpg; sourceTree = "<group>"; };
 		BB4D817A1E899DF300E7D060 /* HelpNowlogo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelpNowlogo1.png; sourceTree = "<group>"; };
 		BB4D817C1E899E0400E7D060 /* helpnowlogo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helpnowlogo2.png; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 		BB1053F61E85421600AEA410 = {
 			isa = PBXGroup;
 			children = (
+				BB2B9C0E1EA2645600D38BE4 /* HelpNow logo HD dark grey.png */,
 				BB1054011E85421600AEA410 /* HelpNow */,
 				BBCB71001E902B0C007DA0E6 /* SVProgressHUD */,
 				BB10541B1E85421700AEA410 /* HelpNowTests */,
@@ -290,6 +295,7 @@
 				BB4D81781E899DDC00E7D060 /* helpnowcover.jpg */,
 				BB4D817A1E899DF300E7D060 /* HelpNowlogo1.png */,
 				BB4D817C1E899E0400E7D060 /* helpnowlogo2.png */,
+				BB2B9C101EA265F200D38BE4 /* helpnowlogo21.png */,
 				BB1054101E85421600AEA410 /* LaunchScreen.storyboard */,
 				BB1054131E85421600AEA410 /* Info.plist */,
 				BB57B8691E925416002C4BC7 /* AppIconPNG.appiconset */,
@@ -531,6 +537,8 @@
 				BB57B88B1E925416002C4BC7 /* Icon-App-57x57@1x.png in Resources */,
 				BB57B8901E925416002C4BC7 /* Icon-App-72x72@1x.png in Resources */,
 				BB57B8911E925416002C4BC7 /* Icon-App-72x72@2x.png in Resources */,
+				BB2B9C0F1EA2645700D38BE4 /* HelpNow logo HD dark grey.png in Resources */,
+				BB2B9C111EA265F200D38BE4 /* helpnowlogo21.png in Resources */,
 				BB57B8871E925416002C4BC7 /* Icon-App-29x29@3x.png in Resources */,
 				BB57B88C1E925416002C4BC7 /* Icon-App-57x57@2x.png in Resources */,
 				BB10540D1E85421600AEA410 /* Main.storyboard in Resources */,

@@ -23,7 +23,7 @@
     [super viewDidLoad];
     
    self.navigationItem.hidesBackButton = YES;
-    NSString *fullName = [NSString stringWithFormat:@"%@ %@", self.userString, self.userStringLast];
+    NSString *fullName = [NSString stringWithFormat:@"Hi %@ %@", self.userString, self.userStringLast];
    self.userLabel.text = fullName;
   //  self.jsonData = self.jsonData;
     
