@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Table View Controller-->
+        <!--Help Now-->
         <scene sceneID="Ce1-0p-3qR">
             <objects>
                 <tableViewController id="ybV-tb-CWw" customClass="MainTableViewController" sceneMemberID="viewController">
@@ -18,14 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helpnowlogo2.png" id="DEP-FV-OAW">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <sections>
+                            <tableViewSection id="Eso-yY-xcB">
+                                <cells/>
+                            </tableViewSection>
                             <tableViewSection id="RvQ-gT-NPD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="fmK-6h-rOl" userLabel="Agent Info">
-                                        <rect key="frame" x="0.0" y="109" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="150" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fmK-6h-rOl" id="glC-Jr-isv">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
@@ -54,7 +57,7 @@
                             <tableViewSection id="Y6A-lB-VHh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="NfP-EU-24F">
-                                        <rect key="frame" x="0.0" y="189" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="230" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NfP-EU-24F" id="3St-0g-azV">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
@@ -79,7 +82,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="wEb-Dz-6tM">
-                                        <rect key="frame" x="0.0" y="233" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="274" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wEb-Dz-6tM" id="lId-rZ-zde">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
@@ -107,7 +110,7 @@
                             <tableViewSection id="OdR-iT-zJO">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="Aid Types" id="0sM-lI-JfD">
-                                        <rect key="frame" x="0.0" y="313" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="354" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0sM-lI-JfD" id="HIu-Ib-bA4">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
@@ -132,7 +135,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="Awards" id="iFD-B2-cLd">
-                                        <rect key="frame" x="0.0" y="357" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="398" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iFD-B2-cLd" id="Ff5-xD-WUz">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
@@ -161,7 +164,7 @@
                             <tableViewSection id="nAe-8y-y4I">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="Agents" id="m2r-Ic-15V">
-                                        <rect key="frame" x="0.0" y="437" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="478" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m2r-Ic-15V" id="cxP-px-FgJ">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
@@ -190,7 +193,7 @@
                             <tableViewSection id="qUZ-gv-nXT">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Agents" id="373-g6-CXd">
-                                        <rect key="frame" x="0.0" y="517" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="558" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="373-g6-CXd" id="vBL-sr-nOX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -223,7 +226,7 @@
                             <outlet property="delegate" destination="ybV-tb-CWw" id="yWv-ON-DM4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bWV-KS-UXJ"/>
+                    <navigationItem key="navigationItem" title="Help Now" id="bWV-KS-UXJ"/>
                     <connections>
                         <outlet property="userLabel" destination="uFQ-1m-8Qn" id="OwM-92-Bs0"/>
                         <segue destination="dn0-tT-M31" kind="show" identifier="logOut" id="AWW-fo-TvP"/>

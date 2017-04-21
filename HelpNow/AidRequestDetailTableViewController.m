@@ -164,7 +164,7 @@
     
     NSDate *dte = [dateFormat dateFromString:self.Date_Requested.text];
     
-    NSString *post =[[NSString alloc] initWithFormat:@"Agent_ID=%@&Amount_Requested=%@&Decision=%@&Date_Requested=%@&Documentation_Provided=%@&Client_Notes=%@&Client_ID%@&Aid_ID%@",[self.agentjsonData  valueForKey:@"Agent_ID"],[_Amount_Requested text],[_Decision text],dte,[_Documentation_Provided text],[_Client_Notes text], [_Client_ID text], [_Aid_ID text]];
+    NSString *post =[[NSString alloc] initWithFormat:@"Amount_Requested=%@&Decision=%@&Date_Requested=%@&Documentation_Provided=%@&Client_Notes=%@&Client_ID=%@&Aid_ID=%@",[_Amount_Requested text],[_Decision text],dte,[_Documentation_Provided text],[_Client_Notes text], [_Client_ID text],[_Aid_ID text]];
     
     
     NSLog(@"PostData: %@",post);
@@ -207,12 +207,10 @@
                                       
                                   }
                                   ];
+ 
     [task resume];
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
-    [self Alert:@"Decision is pending approval.  We encourage you to check back often or visit us at www.helpnow.com"];
-    
+  //  [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 

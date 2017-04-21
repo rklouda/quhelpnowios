@@ -58,6 +58,7 @@
                                       [self end:self.AidjsonData];
                                   }];
     [task resume];
+       [SVProgressHUD dismiss];
     
     
 }- (void)end:(NSDictionary *)agents
