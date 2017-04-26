@@ -58,6 +58,12 @@
 		BB57B8961E925416002C4BC7 /* Icon-Small-50x50@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB57B87F1E925416002C4BC7 /* Icon-Small-50x50@1x.png */; };
 		BB57B8971E925416002C4BC7 /* Icon-Small-50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB57B8801E925416002C4BC7 /* Icon-Small-50x50@2x.png */; };
 		BB57B89A1E92590C002C4BC7 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57B8991E92590C002C4BC7 /* SearchResultsViewController.m */; };
+		BB5AF63E1EA9F44A00BD7178 /* Screen Shot 2017-04-21 at 10.02.25 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5AF63D1EA9F44A00BD7178 /* Screen Shot 2017-04-21 at 10.02.25 AM.png */; };
+		BB5AF6411EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.55 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5AF63F1EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.55 AM.png */; };
+		BB5AF6421EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.46 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5AF6401EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.46 AM.png */; };
+		BB5AF6451EA9F6F100BD7178 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5AF6441EA9F6F100BD7178 /* ReportViewController.m */; };
+		BB5AF6471EAC6F0700BD7178 /* HelpNow logo HD dark grey.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5AF6461EAC6F0700BD7178 /* HelpNow logo HD dark grey.png */; };
+		BB5AF6491EAC710300BD7178 /* HelpNow logo HD.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5AF6481EAC710300BD7178 /* HelpNow logo HD.png */; };
 		BB97A7DE1E8B6C5400A10CBA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB97A7DD1E8B6C5400A10CBA /* TableViewController.m */; };
 		BB97A7E11E8BE4E300A10CBA /* ClientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB97A7E01E8BE4E300A10CBA /* ClientTableViewController.m */; };
 		BB97A8261E8D2BC800A10CBA /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB97A8251E8D2BC800A10CBA /* LoginTableViewController.m */; };
@@ -169,6 +175,13 @@
 		BB57B8801E925416002C4BC7 /* Icon-Small-50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50x50@2x.png"; sourceTree = "<group>"; };
 		BB57B8981E92590C002C4BC7 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		BB57B8991E92590C002C4BC7 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
+		BB5AF63D1EA9F44A00BD7178 /* Screen Shot 2017-04-21 at 10.02.25 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-04-21 at 10.02.25 AM.png"; sourceTree = "<group>"; };
+		BB5AF63F1EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.55 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-04-21 at 10.08.55 AM.png"; sourceTree = "<group>"; };
+		BB5AF6401EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.46 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-04-21 at 10.08.46 AM.png"; sourceTree = "<group>"; };
+		BB5AF6431EA9F6F100BD7178 /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		BB5AF6441EA9F6F100BD7178 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		BB5AF6461EAC6F0700BD7178 /* HelpNow logo HD dark grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HelpNow logo HD dark grey.png"; sourceTree = "<group>"; };
+		BB5AF6481EAC710300BD7178 /* HelpNow logo HD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HelpNow logo HD.png"; sourceTree = "<group>"; };
 		BB97A7DC1E8B6C5400A10CBA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		BB97A7DD1E8B6C5400A10CBA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		BB97A7DF1E8BE4E300A10CBA /* ClientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientTableViewController.h; sourceTree = "<group>"; };
@@ -270,6 +283,13 @@
 				BB1054351E8544A300AEA410 /* users.xcdatamodeld */,
 				BB1054391E8545C400AEA410 /* users.swift */,
 				BB10540B1E85421600AEA410 /* Main.storyboard */,
+				BB5AF6481EAC710300BD7178 /* HelpNow logo HD.png */,
+				BB5AF6461EAC6F0700BD7178 /* HelpNow logo HD dark grey.png */,
+				BB5AF6431EA9F6F100BD7178 /* ReportViewController.h */,
+				BB5AF6441EA9F6F100BD7178 /* ReportViewController.m */,
+				BB5AF63F1EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.55 AM.png */,
+				BB5AF6401EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.46 AM.png */,
+				BB5AF63D1EA9F44A00BD7178 /* Screen Shot 2017-04-21 at 10.02.25 AM.png */,
 				BBF9084C1E94936D00F71325 /* ColorTableViewController.h */,
 				BBF9084D1E94936D00F71325 /* ColorTableViewController.m */,
 				BBF908461E93220C00F71325 /* AwardsTableViewController.h */,
@@ -532,21 +552,26 @@
 				BB57B8941E925416002C4BC7 /* Icon-App-76x76@3x.png in Resources */,
 				BB57B8821E925416002C4BC7 /* Icon-App-20x20@1x.png in Resources */,
 				BB57B8681E924E97002C4BC7 /* Images.xcassets in Resources */,
+				BB5AF6491EAC710300BD7178 /* HelpNow logo HD.png in Resources */,
 				BB57B8841E925416002C4BC7 /* Icon-App-20x20@3x.png in Resources */,
 				BB57B8861E925416002C4BC7 /* Icon-App-29x29@2x.png in Resources */,
 				BB57B88B1E925416002C4BC7 /* Icon-App-57x57@1x.png in Resources */,
 				BB57B8901E925416002C4BC7 /* Icon-App-72x72@1x.png in Resources */,
+				BB5AF6471EAC6F0700BD7178 /* HelpNow logo HD dark grey.png in Resources */,
 				BB57B8911E925416002C4BC7 /* Icon-App-72x72@2x.png in Resources */,
 				BB2B9C0F1EA2645700D38BE4 /* HelpNow logo HD dark grey.png in Resources */,
 				BB2B9C111EA265F200D38BE4 /* helpnowlogo21.png in Resources */,
 				BB57B8871E925416002C4BC7 /* Icon-App-29x29@3x.png in Resources */,
 				BB57B88C1E925416002C4BC7 /* Icon-App-57x57@2x.png in Resources */,
+				BB5AF6421EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.46 AM.png in Resources */,
 				BB10540D1E85421600AEA410 /* Main.storyboard in Resources */,
 				BB57B8951E925416002C4BC7 /* Icon-App-83.5x83.5@2x.png in Resources */,
+				BB5AF63E1EA9F44A00BD7178 /* Screen Shot 2017-04-21 at 10.02.25 AM.png in Resources */,
 				BB57B88A1E925416002C4BC7 /* Icon-App-40x40@3x.png in Resources */,
 				BB57B8831E925416002C4BC7 /* Icon-App-20x20@2x.png in Resources */,
 				BB57B8971E925416002C4BC7 /* Icon-Small-50x50@2x.png in Resources */,
 				BB4D81791E899DDC00E7D060 /* helpnowcover.jpg in Resources */,
+				BB5AF6411EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.55 AM.png in Resources */,
 				BB57B8931E925416002C4BC7 /* Icon-App-76x76@2x.png in Resources */,
 				BB57B8851E925416002C4BC7 /* Icon-App-29x29@1x.png in Resources */,
 			);
@@ -583,6 +608,7 @@
 				BB1054371E8544A300AEA410 /* users.xcdatamodeld in Sources */,
 				BB97A7E11E8BE4E300A10CBA /* ClientTableViewController.m in Sources */,
 				BB4D819B1E89A3B900E7D060 /* SBJsonStreamParserAccumulator.m in Sources */,
+				BB5AF6451EA9F6F100BD7178 /* ReportViewController.m in Sources */,
 				BB10543A1E8545C400AEA410 /* users.swift in Sources */,
 				BB57B89A1E92590C002C4BC7 /* SearchResultsViewController.m in Sources */,
 				BB10540A1E85421600AEA410 /* ViewController.m in Sources */,
