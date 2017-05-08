@@ -52,7 +52,7 @@
     self.navigationItem.rightBarButtonItem = update;
     update.enabled = NO;
         
-   
+   //LOADING CLIENT INFO FROM CLIENT TABLE VIEW CONTROLLER
        self.Client_ID.text = self.R_Client_ID;
        self.Last_Name.text = self.R_Last_Name;
       self.First_Name.text = self.R_First_Name;

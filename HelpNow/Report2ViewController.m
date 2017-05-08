@@ -6,13 +6,13 @@
 //  Copyright © 2017 Robert Klouda. All rights reserved.
 //
 
-#import "ReportViewController.h"
+#import "Report2ViewController.h"
 
-@interface ReportViewController ()
+@interface Report2ViewController ()
 
 @end
 
-@implementation ReportViewController
+@implementation Report2ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +24,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-NSString *urlString = @"https://quhelpnow-raklouda.c9users.io/reports.1.php";
+NSString *urlString = @"https://quhelpnow-raklouda.c9users.io/reports.1a.php";
 //    NSString *urlString = @"https://www.google.com";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];

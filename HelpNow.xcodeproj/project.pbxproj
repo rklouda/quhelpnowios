@@ -68,6 +68,8 @@
 		BB97A7E11E8BE4E300A10CBA /* ClientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB97A7E01E8BE4E300A10CBA /* ClientTableViewController.m */; };
 		BB97A8261E8D2BC800A10CBA /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB97A8251E8D2BC800A10CBA /* LoginTableViewController.m */; };
 		BB97A8281E8DFC7C00A10CBA /* RegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB97A8271E8DFC7C00A10CBA /* RegisterTableViewController.m */; };
+		BBBE3EF91EC111F70067A911 /* Report2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBE3EF81EC111F70067A911 /* Report2ViewController.m */; };
+		BBBE3EFC1EC1128A0067A911 /* Report3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBE3EFB1EC1128A0067A911 /* Report3ViewController.m */; };
 		BBCB71061E902B0C007DA0E6 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB71021E902B0C007DA0E6 /* SVIndefiniteAnimatedView.m */; };
 		BBCB71071E902B0C007DA0E6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BBCB71031E902B0C007DA0E6 /* SVProgressHUD.bundle */; };
 		BBCB71081E902B0C007DA0E6 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB71051E902B0C007DA0E6 /* SVProgressHUD.m */; };
@@ -190,6 +192,10 @@
 		BB97A8251E8D2BC800A10CBA /* LoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableViewController.m; sourceTree = "<group>"; };
 		BB97A8271E8DFC7C00A10CBA /* RegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTableViewController.m; sourceTree = "<group>"; };
 		BB97A8291E8DFC9900A10CBA /* RegisterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTableViewController.h; sourceTree = "<group>"; };
+		BBBE3EF81EC111F70067A911 /* Report2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report2ViewController.m; sourceTree = "<group>"; };
+		BBBE3EFA1EC112020067A911 /* Report2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report2ViewController.h; sourceTree = "<group>"; };
+		BBBE3EFB1EC1128A0067A911 /* Report3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report3ViewController.m; sourceTree = "<group>"; };
+		BBBE3EFD1EC112930067A911 /* Report3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report3ViewController.h; sourceTree = "<group>"; };
 		BBCB71011E902B0C007DA0E6 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		BBCB71021E902B0C007DA0E6 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		BBCB71031E902B0C007DA0E6 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -287,6 +293,10 @@
 				BB5AF6461EAC6F0700BD7178 /* HelpNow logo HD dark grey.png */,
 				BB5AF6431EA9F6F100BD7178 /* ReportViewController.h */,
 				BB5AF6441EA9F6F100BD7178 /* ReportViewController.m */,
+				BBBE3EF81EC111F70067A911 /* Report2ViewController.m */,
+				BBBE3EFA1EC112020067A911 /* Report2ViewController.h */,
+				BBBE3EFD1EC112930067A911 /* Report3ViewController.h */,
+				BBBE3EFB1EC1128A0067A911 /* Report3ViewController.m */,
 				BB5AF63F1EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.55 AM.png */,
 				BB5AF6401EA9F5B200BD7178 /* Screen Shot 2017-04-21 at 10.08.46 AM.png */,
 				BB5AF63D1EA9F44A00BD7178 /* Screen Shot 2017-04-21 at 10.02.25 AM.png */,
@@ -598,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBBE3EFC1EC1128A0067A911 /* Report3ViewController.m in Sources */,
 				BBF9083C1E93207C00F71325 /* AidRequestTableViewController.m in Sources */,
 				BBCFD73E1E8FBF2800B85322 /* MainTableViewController.m in Sources */,
 				BB4D819D1E89A3B900E7D060 /* SBJsonStreamParserState.m in Sources */,
@@ -609,6 +620,7 @@
 				BB97A7E11E8BE4E300A10CBA /* ClientTableViewController.m in Sources */,
 				BB4D819B1E89A3B900E7D060 /* SBJsonStreamParserAccumulator.m in Sources */,
 				BB5AF6451EA9F6F100BD7178 /* ReportViewController.m in Sources */,
+				BBBE3EF91EC111F70067A911 /* Report2ViewController.m in Sources */,
 				BB10543A1E8545C400AEA410 /* users.swift in Sources */,
 				BB57B89A1E92590C002C4BC7 /* SearchResultsViewController.m in Sources */,
 				BB10540A1E85421600AEA410 /* ViewController.m in Sources */,

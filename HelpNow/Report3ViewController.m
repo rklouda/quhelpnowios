@@ -6,13 +6,13 @@
 //  Copyright © 2017 Robert Klouda. All rights reserved.
 //
 
-#import "ReportViewController.h"
+#import "Report3ViewController.h"
 
-@interface ReportViewController ()
+@interface Report3ViewController ()
 
 @end
 
-@implementation ReportViewController
+@implementation Report3ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,7 +25,7 @@
     
     
 NSString *urlString = @"https://quhelpnow-raklouda.c9users.io/reports.1.php";
-//    NSString *urlString = @"https://www.google.com";
+//    NSString *urlString = @"https://www.zscaler.com";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:urlRequest];
